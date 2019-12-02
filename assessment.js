@@ -43,27 +43,27 @@ function daBears() {
 // Which function(s) access the "chair" variable and get "Too Big!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale1 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale1 = ["papaBear"];
 
 // Which function(s) access the "feeling" variable and get "Hungry"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale2 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale2 = ["goldilocks"];
 
 // Which function(s) access the "porridge" variable and get "Too Cold!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale3 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale3 = ["mamaBear"];
 
 // Which function(s) access the "sleepy" variable and get undefined
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale4 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale4 = [];
 
 // Which function(s) access the isFurry variable and get true
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale5 = ["daBears", "goldilocks"];
 
 
 // *************
@@ -83,8 +83,16 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // CODE HERE...
 
+function Vehicle() {
+   
+    return {gasRemaining: 100,
+            drive: function() { Vehicle.gasRemaining - 25; }
+            }
+}
 
+let charger = Vehicle();
 
+let mustang = Vehicle();
 
 
 // -----------------------------------------------------------------------------
@@ -109,6 +117,41 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // CODE HERE...
 
+// THIS NOT DONE!!!
+function grammarPolice(array) {
+    //make check var to check space
+    //make other check variable to check the letter
+    //make array converted in new string
+
+    let checkSpace = false;
+    let checkLetter = false;
+    let newStr = '';
+
+    for (let i = 0; i < array.length; i++) {
+        if (i === 0 && array[i] === array[i].toUpperCase()) {
+            checkLetter = true;  
+            checkSpace = true;  
+            newStr += array[i];
+        }
+        if (checkLetter === true && checkSpace === true) {
+            newStr += array[i].toLowerCase()
+            if (array[i] === ' ') {
+                checkSpace = false;
+                checkLetter = false;
+            }
+        }
+        if (checkLetter === false && checkSpace === false) {
+            newStr += array[i]
+            checkLetter = true;  
+            checkSpace = true;
+        }
+
+
+
+    }
+
+    return newStr;
+}
 
 
 // *************
