@@ -133,6 +133,11 @@ function grammarPolice(array) {
             checkSpace = true;  
             newStr += array[i];
         }
+        if (checkLetter === false && checkSpace === false) {
+            newStr += array[i]
+            checkLetter = true;  
+            checkSpace = true;
+        }
         if (checkLetter === true && checkSpace === true) {
             newStr += array[i].toLowerCase()
             if (array[i] === ' ') {
@@ -140,11 +145,7 @@ function grammarPolice(array) {
                 checkLetter = false;
             }
         }
-        if (checkLetter === false && checkSpace === false) {
-            newStr += array[i]
-            checkLetter = true;  
-            checkSpace = true;
-        }
+        
 
 
 
